@@ -1,9 +1,9 @@
 from pgzrun import go
-from random import randint
+from random import randrange, randint
 
 
 TITLE = "SPACE INVADERS"
-WIDTH = 750
+WIDTH = 800
 HEIGHT = 600
 
 
@@ -20,19 +20,21 @@ def update(): # built in
 
 
 def draw(): # built in
-    screen.blit("background", (0, 0))
+    screen.fill((0, 0, 0))
     ship.draw()
-""" for pip in pips:
+    for pip in pips:
         pip.draw()
     for alien in aliens:
-        alien.draw()"""
+        alien.draw()
 
 
 def ship_movement():
     if keyboard[keys.LEFT]:
-        ship.x -= 5
+        if ship.x > 25:
+            ship.x -= 5
     elif keyboard[keys.RIGHT]:
-        ship.x += 5
+        if ship.x < 775:
+            ship.x += 5
 
 
 def on_key_down(key): # built in
@@ -45,7 +47,7 @@ def update_pips():
     for pip in pips:
         pip.y -= 10
         if pip.y < 0:
-            pips.pop(index)    
+            pips.pop(index)
         index += 1
 
 
@@ -54,7 +56,7 @@ def spawn_aliens():
     columns = 0
     while columns < 4:
         row_length = 0
-        x_spawn = 150
+        x_spawn = 175
         while row_length < 10:
             alien = Actor(alien_costumes[columns], (x_spawn, y_spawn))
             aliens.append(alien)
@@ -64,5 +66,5 @@ def spawn_aliens():
         y_spawn += 50
 
 
-#spawn_aliens()
+spawn_aliens()
 go()
