@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "space-invaders"
+name = "repl_python3_Space-Invaders"
 version = "0.1.0"
 description = ""
 authors = ["Tomhausen <<>>"]
@@ -7,6 +7,7 @@ authors = ["Tomhausen <<>>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 pgzero = "^1.2.1"
+pygame = "^2.0.1"
 
 [tool.poetry.dev-dependencies]
 
