@@ -72,7 +72,7 @@ def new_level():
         
         columns += 1
         y_spawn += 50
-
+        
 
 def aliens_movement():
     speed = controller.get_speed()
