@@ -1,5 +1,4 @@
 from pgzrun import go
-from random import randint
 from alien_controller import AlienController
 
 
